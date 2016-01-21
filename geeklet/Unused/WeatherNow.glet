@@ -2,13 +2,16 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>BackgroundColor</key>
-	<data>
-	BAtzdHJlYW10eXBlZIHoA4QBQISEhAdOU0NvbG9yAISECE5TT2JqZWN0AIWEAWMBhARm
-	ZmZmAAAAAIY=
-	</data>
 	<key>Command</key>
-	<string>date +%S</string>
+	<string>#!/bin/bash
+#
+# Author: Mohammad Rashid Ali Ahmad
+# Author email: rash.dev@hotmail.com
+#
+# Get current weather image
+curl --silent "http://weather.yahoo.com/germany/north-rhine-westphalia/paderborn-684090/" | grep "current-weather" | sed "s/.*background:url(\('.*'\)) no-repeat scroll.*/\1/" | xargs curl --silent -o /tmp/weather.png
+# Get current weather condition
+#curl --silent "http://weather.yahooapis.com/forecastrss?w=12797587&amp;u=c" | grep -E -A2 '(Forecast:)' | sed -e 's/Forecast://' -e 's/&lt;br \/&gt;/°C/' -e 's/&lt;b&gt;//' -e 's/&lt;\/b&gt;//' -e 's/&lt;BR \/&gt;//' -e 's/&lt;BR \/&gt;//' -e '/^$/d' -e 's/\(.*\) Low/\1°C Low/' -e 's/&lt;description&gt;//' -e 's/&lt;\/description&gt;//'</string>
 	<key>DropShadow</key>
 	<false/>
 	<key>FailureImage</key>
@@ -41,17 +44,19 @@
 	<key>FontFamily</key>
 	<string>HelveticaNeue-UltraLight</string>
 	<key>FontSize</key>
-	<real>60</real>
+	<real>25</real>
 	<key>GeekletFrame</key>
-	<string>{{1580, 450}, {96, 64}}</string>
+	<string>{{19, 1003}, {303, 45}}</string>
 	<key>HasShadow</key>
 	<false/>
 	<key>Identifier</key>
 	<string>org.tynsoe.geeklet.shell</string>
+	<key>KeepOnTop</key>
+	<false/>
 	<key>Name</key>
-	<string>timeSec</string>
+	<string>weatherNow</string>
 	<key>RefreshInterval</key>
-	<integer>1</integer>
+	<integer>300</integer>
 	<key>SetLocale</key>
 	<true/>
 	<key>SuccessImage</key>
@@ -81,10 +86,13 @@
 	AAAAAQAEAAABFgADAAAAAQAQAAABFwAEAAAAAQAABAABHAADAAAAAQABAAABUgADAAAA
 	AQACAAABUwADAAAABAAABLIAAAAAAAgACAAIAAgAAQABAAEAAQ==
 	</data>
+	<key>TextAlignment</key>
+	<integer>0</integer>
 	<key>TextColor</key>
 	<data>
-	BAtzdHJlYW10eXBlZIHoA4QBQISEhAdOU0NvbG9yAISECE5TT2JqZWN0AIWEAWMBhARm
-	ZmZmAAAAAYY=
+	BAtzdHJlYW10eXBlZIHoA4QBQISEhAdOU0NvbG9yAISECE5TT2JqZWN0AIWEAWMGhANA
+	QECEhIQITlNTdHJpbmcBlIQBKwZTeXN0ZW2GhJaYDGNvbnRyb2xDb2xvcoaEk5UDhAJm
+	ZoOrqio/AYaG
 	</data>
 	<key>TextStrikethrough</key>
 	<integer>0</integer>

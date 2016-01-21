@@ -3,18 +3,14 @@
 <plist version="1.0">
 <dict>
 	<key>GeekletFrame</key>
-	<string>{{18, 886}, {255, 182}}</string>
+	<string>{{1546, 914}, {131, 131}}</string>
 	<key>HasShadow</key>
 	<false/>
 	<key>Identifier</key>
 	<string>org.tynsoe.geeklet.image</string>
 	<key>ImageURL</key>
-	<string>file://localhost/tmp/weather.png</string>
-	<key>KeepOnTop</key>
-	<false/>
+	<string>file:///Users/rashidGD/src/geektool/geeklet/DiskCapacityMeter/temp.png</string>
 	<key>Name</key>
-	<string>weatherImage</string>
-	<key>RefreshInterval</key>
-	<integer>300</integer>
+	<string>Disk Capacity Image</string>
 </dict>
 </plist>

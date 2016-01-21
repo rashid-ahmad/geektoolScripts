@@ -11,7 +11,9 @@
 ###############################################################################
 
 # The URL of the search query from islamic finder
-webURL="http://www.islamicfinder.org/prayer_service.php?country=germany&city=paderborn&state=07&zipcode=&latitude=51.7167&longitude=8.7667&timezone=1&HanfiShafi=2&pmethod=1&fajrTwilight1=10&fajrTwilight2=10&ishaTwilight=10&ishaInterval=30&dhuhrInterval=1&maghribInterval=1&dayLight=1&simpleFormat=xml"
+paderborn="http://www.islamicfinder.org/prayer_service.php?country=germany&city=paderborn&state=07&zipcode=&latitude=51.7167&longitude=8.7667&timezone=1&HanfiShafi=2&pmethod=1&fajrTwilight1=10&fajrTwilight2=10&ishaTwilight=10&ishaInterval=30&dhuhrInterval=1&maghribInterval=1&dayLight=1&simpleFormat=xml"
+hounslow="http://www.islamicfinder.org/prayer_service.php?country=united_kingdom&city=Hounslow&state=07&zipcode=&latitude=51.4667&longitude=-0.3500&timezone=0&HanfiShafi=2&pmethod=1&fajrTwilight1=10&fajrTwilight2=10&ishaTwilight=10&ishaInterval=30&dhuhrInterval=1&maghribInterval=1&dayLight=1&simpleFormat=xml"
+webURL=$hounslow
 
 # Select the color in which you want the current Salah to be highlighted
 # Black, Red, Green, Yellow, Blue, Magenta, Cyan, White
@@ -272,12 +274,12 @@ setColorForTime()
     # Decide on the color based on the current time
     if [ $currTime -lt $fTime ]
     then
-        decideColor $fTime "Fajr\t\t\t$fTimeHMS"
-        echo -e "Sunrise\t$sTimeHMS"
-        echo -e "Duhur\t$dTimeHMS"
-        echo -e "Asr\t\t\t$aTimeHMS"
-        echo -e "Magrib\t$mTimeHMS"
-        echo -e "Isha\t\t\t$iTimeHMS"
+        decideColor $fTime "Fajr\t\t\t\t$fTimeHMS"
+        echo -e "Sunrise\t\t$sTimeHMS"
+        echo -e "Duhur\t\t$dTimeHMS"
+        echo -e "Asr\t\t\t\t$aTimeHMS"
+        echo -e "Magrib\t\t$mTimeHMS"
+        echo -e "Isha\t\t\t\t$iTimeHMS"
     else
         if [ $currTime -lt $sTime ]
         then

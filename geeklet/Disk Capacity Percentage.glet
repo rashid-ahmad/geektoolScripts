@@ -2,13 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>BackgroundColor</key>
-	<data>
-	BAtzdHJlYW10eXBlZIHoA4QBQISEhAdOU0NvbG9yAISECE5TT2JqZWN0AIWEAWMBhARm
-	ZmZmAAAAAIY=
-	</data>
 	<key>Command</key>
-	<string>date +%S</string>
+	<string>df -hl | grep 'disk1' | awk '{print $5}'</string>
 	<key>DropShadow</key>
 	<false/>
 	<key>FailureImage</key>
@@ -41,17 +36,17 @@
 	<key>FontFamily</key>
 	<string>HelveticaNeue-UltraLight</string>
 	<key>FontSize</key>
-	<real>60</real>
+	<real>36</real>
 	<key>GeekletFrame</key>
-	<string>{{1580, 450}, {96, 64}}</string>
+	<string>{{1546, 960}, {140, 55}}</string>
 	<key>HasShadow</key>
 	<false/>
 	<key>Identifier</key>
 	<string>org.tynsoe.geeklet.shell</string>
 	<key>Name</key>
-	<string>timeSec</string>
+	<string>Disk Capacity Percentage</string>
 	<key>RefreshInterval</key>
-	<integer>1</integer>
+	<integer>60</integer>
 	<key>SetLocale</key>
 	<true/>
 	<key>SuccessImage</key>
@@ -81,10 +76,12 @@
 	AAAAAQAEAAABFgADAAAAAQAQAAABFwAEAAAAAQAABAABHAADAAAAAQABAAABUgADAAAA
 	AQACAAABUwADAAAABAAABLIAAAAAAAgACAAIAAgAAQABAAEAAQ==
 	</data>
+	<key>TextAlignment</key>
+	<integer>2</integer>
 	<key>TextColor</key>
 	<data>
 	BAtzdHJlYW10eXBlZIHoA4QBQISEhAdOU0NvbG9yAISECE5TT2JqZWN0AIWEAWMBhARm
-	ZmZmAAAAAYY=
+	ZmZmAQEBAYY=
 	</data>
 	<key>TextStrikethrough</key>
 	<integer>0</integer>

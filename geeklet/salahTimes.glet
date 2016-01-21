@@ -16,7 +16,7 @@
 ###############################################################################
 
 # The URL of the search query from islamic finder
-webURL="http://www.islamicfinder.org/prayer_service.php?country=germany&amp;city=paderborn&amp;state=07&amp;zipcode=&amp;latitude=51.7167&amp;longitude=8.7667&amp;timezone=1&amp;HanfiShafi=2&amp;pmethod=1&amp;fajrTwilight1=10&amp;fajrTwilight2=10&amp;ishaTwilight=10&amp;ishaInterval=30&amp;dhuhrInterval=1&amp;maghribInterval=1&amp;dayLight=1&amp;simpleFormat=xml"
+webURL="http://www.islamicfinder.org/prayer_service.php?country=usa&amp;amp;city=san_jose&amp;state=CA&amp;zipcode=95134&amp;latitude=37.4307&amp;longitude=-121.9449&amp;timezone=-8&amp;HanfiShafi=1&amp;pmethod=5&amp;fajrTwilight1=10&amp;fajrTwilight2=10&amp;ishaTwilight=10&amp;ishaInterval=30&amp;dhuhrInterval=1&amp;maghribInterval=1&amp;dayLight=1&amp;simpleFormat=xml"
 
 # Select the color in which you want the current Salah to be highlighted
 # Black, Red, Green, Yellow, Blue, Magenta, Cyan, White
@@ -496,7 +496,7 @@ exit 0</string>
 	<key>FontSize</key>
 	<real>35</real>
 	<key>GeekletFrame</key>
-	<string>{{1460.87890625, 101.59375}, {209, 249}}</string>
+	<string>{{1347, 105}, {321, 263}}</string>
 	<key>HasShadow</key>
 	<false/>
 	<key>Identifier</key>
