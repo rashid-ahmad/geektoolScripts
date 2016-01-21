@@ -8,31 +8,8 @@
 # Author: Mohammad Rashid Ali Ahmad
 # Author email: rash.dev@hotmail.com
 #
-
-GK_WEATHER_FILE=$TMPDIR/GeekTool_WeatherTxt.txt
-
-# Check if file exists
-if [ ! -f $GK_WEATHER_FILE ]
-	then
-		curl --silent "http://weather.yahooapis.com/forecastrss?w=12797613&amp;u=c" &gt; $GK_WEATHER_FILE
-fi
-
-# &lt;BR /&gt;&lt;b&gt;Forecast:&lt;/b&gt;&lt;BR /&gt;
-# Thu - AM Clouds/PM Sun. High: 19 Low: 13&lt;br /&gt;
-# Fri - Rain. High: 16 Low: 10&lt;br /&gt;
-# Sat - Showers. High: 14 Low: 7&lt;br /&gt;
-# Sun - Partly Cloudy. High: 15 Low: 6&lt;br /&gt;
-# Mon - Partly Cloudy. High: 17 Low: 7&lt;br /&gt;
-# &lt;br /&gt;
-
-#grep -E -A2 '(Forecast:)' $GK_WEATHER_FILE | sed -e 's/Forecast://' -e 's/&lt;br \/&gt;/°C/' -e 's/&lt;b&gt;//' -e 's/&lt;\/b&gt;//' -e 's/&lt;BR \/&gt;//' -e 's/&lt;BR \/&gt;//' -e '/^$/d' -e 's/\(.*\) Low/\1°C Low/' -e 's/&lt;description&gt;//' -e 's/&lt;\/description&gt;//'
-
-# &lt;b&gt;Current Conditions:&lt;/b&gt;&lt;br /&gt;
-# Mostly Cloudy, 14 C&lt;BR /&gt;
-#grep -E '(Current Conditions:|C&lt;BR)' $GK_WEATHER_FILE | sed -e 's/Current Conditions://' -e 's/&lt;br \/&gt;//' -e 's/&lt;b&gt;//' -e 's/&lt;\/b&gt;//' -e 's/&lt;BR \/&gt;//' -e 's/\(.*\) C/\1°C/' -e '/^$/d' -e 's/&lt;description&gt;//' -e 's/&lt;\/description&gt;//'
-
-# &lt;yweather:location city="San Jose" region="CA"   country="United States"/&gt;
-grep -E '(&lt;yweather:location city=")' $GK_WEATHER_FILE | sed -n -e 's/.*&lt;yweather:location city="\(.*\)" region.*/\1/p'</string>
+/Users/rashidGD/src/geektoolScripts/scripts/gk_yahooWeather.sh 
+cat $TMPDIR/GeekTool_WeatherCityName.txt</string>
 	<key>DropShadow</key>
 	<false/>
 	<key>FailureImage</key>
@@ -129,7 +106,7 @@ grep -E '(&lt;yweather:location city=")' $GK_WEATHER_FILE | sed -n -e 's/.*&lt;y
 	<key>FontSize</key>
 	<real>64</real>
 	<key>GeekletFrame</key>
-	<string>{{4.2421875, 734.4375}, {808, 75}}</string>
+	<string>{{4, 734}, {809, 76}}</string>
 	<key>HasShadow</key>
 	<false/>
 	<key>Identifier</key>

@@ -8,20 +8,9 @@
 # Author: Mohammad Rashid Ali Ahmad
 # Author email: rash.dev@hotmail.com
 #
-
-GK_WEATHER_FILE=$TMPDIR/GeekTool_WeatherTxt.txt
-
-# Check if file exists
-if [ ! -f $GK_WEATHER_FILE ]
-	then
-		curl --silent "http://weather.yahooapis.com/forecastrss?w=12797613&amp;u=c" &gt; $GK_WEATHER_FILE
-fi
-
-# Get the forecast
-#grep -E -A2 '(Forecast:)' $GK_WEATHER_FILE | sed -e 's/Forecast://' -e 's/&lt;br \/&gt;/°C/' -e 's/&lt;b&gt;//' -e 's/&lt;\/b&gt;//' -e 's/&lt;BR \/&gt;//' -e 's/&lt;BR \/&gt;//' -e '/^$/d' -e 's/\(.*\) Low/\1°C Low/' -e 's/&lt;description&gt;//' -e 's/&lt;\/description&gt;//'
-
-# Get the current conditions
-grep -E '(Current Conditions:|C&lt;BR)' $GK_WEATHER_FILE | sed -e 's/Current Conditions://' -e 's/&lt;br \/&gt;//' -e 's/&lt;b&gt;//' -e 's/&lt;\/b&gt;//' -e 's/&lt;BR \/&gt;//' -e 's/\(.*\) C/\1°C/' -e '/^$/d' -e 's/&lt;description&gt;//' -e 's/&lt;\/description&gt;//'</string>
+#!/bin/bash
+/Users/rashidGD/src/geektoolScripts/scripts/gk_yahooWeather.sh 
+cat $TMPDIR/GeekTool_WeatherCurrentCondition.txt</string>
 	<key>DropShadow</key>
 	<false/>
 	<key>FailureImage</key>
@@ -118,7 +107,7 @@ grep -E '(Current Conditions:|C&lt;BR)' $GK_WEATHER_FILE | sed -e 's/Current Con
 	<key>FontSize</key>
 	<real>48</real>
 	<key>GeekletFrame</key>
-	<string>{{6, 796}, {648, 71}}</string>
+	<string>{{84, 802}, {648, 71}}</string>
 	<key>HasShadow</key>
 	<false/>
 	<key>Identifier</key>

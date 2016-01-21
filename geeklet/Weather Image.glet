@@ -3,18 +3,16 @@
 <plist version="1.0">
 <dict>
 	<key>GeekletFrame</key>
-	<string>{{18, 886}, {255, 182}}</string>
+	<string>{{2.4765625, 789}, {95, 87}}</string>
 	<key>HasShadow</key>
 	<false/>
 	<key>Identifier</key>
 	<string>org.tynsoe.geeklet.image</string>
 	<key>ImageURL</key>
-	<string>file://localhost/tmp/weather.png</string>
-	<key>KeepOnTop</key>
-	<false/>
+	<string>file:///Users/rashidGD/src/geektoolScripts/scripts/WeatherImages/</string>
 	<key>Name</key>
-	<string>weatherImage</string>
+	<string>Weather Image</string>
 	<key>RefreshInterval</key>
-	<integer>300</integer>
+	<integer>3670</integer>
 </dict>
 </plist>
