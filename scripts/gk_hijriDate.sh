@@ -7,9 +7,12 @@
 # http://www.islamicfinder.org/prayer_search.php#2
 
 paderborn="http://www.islamicfinder.org/prayer_service.php?country=germany&city=paderborn&state=07&zipcode=&latitude=51.7167&longitude=8.7667&timezone=1&HanfiShafi=2&pmethod=1&fajrTwilight1=10&fajrTwilight2=10&ishaTwilight=10&ishaInterval=30&dhuhrInterval=1&maghribInterval=1&dayLight=1&simpleFormat=xml"
+
 hounslow="http://www.islamicfinder.org/prayer_service.php?country=united_kingdom&city=Hounslow&state=07&zipcode=&latitude=51.4667&longitude=-0.3500&timezone=0&HanfiShafi=2&pmethod=1&fajrTwilight1=10&fajrTwilight2=10&ishaTwilight=10&ishaInterval=30&dhuhrInterval=1&maghribInterval=1&dayLight=1&simpleFormat=xml"
 
-url=$hounslow
+sanjose="http://www.islamicfinder.org/prayer_service.php?latitude=37.3422&longitude=-121.9052&timezone=-8&pmethod=5&daylight=1&city=San_Jose&state=CA&state_name=California&country_code_geoip=US&country=usa&geoip=1&lang=english&simpleFormat=xml"
+
+url=$sanjose
 res=$(curl --silent $url)
 line=$(echo $res | sed ':a;N;$!ba;s/\n//g') 
 echo $line | sed -n -e 's/.*<hijri>\(.*\)<\/hijri>.*/\1/p'
