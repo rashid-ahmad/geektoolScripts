@@ -9,7 +9,7 @@
 	<key>Identifier</key>
 	<string>org.tynsoe.geeklet.image</string>
 	<key>ImageURL</key>
-	<string>file:///Users/rashidGD/src/geektool/geeklet/DiskCapacityMeter/temp.png</string>
+	<string>file:///Users/rashidGD/src/geektoolScripts/geeklet/DiskCapacityMeter/temp.png</string>
 	<key>Name</key>
 	<string>Disk Capacity Image</string>
 </dict>
