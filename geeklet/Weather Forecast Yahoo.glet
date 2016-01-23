@@ -107,7 +107,7 @@ cat $TMPDIR/GeekTool_WeatherForecast.txt</string>
 	<key>FontSize</key>
 	<real>14</real>
 	<key>GeekletFrame</key>
-	<string>{{9, 857}, {458, 47}}</string>
+	<string>{{11.38671875, 838.67578125}, {458, 58}}</string>
 	<key>HasShadow</key>
 	<false/>
 	<key>Identifier</key>
