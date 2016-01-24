@@ -3,17 +3,13 @@
 <plist version="1.0">
 <dict>
 	<key>Command</key>
-	<string>#!/bin/bash
-#
+	<string>#
 # Author: Mohammad Rashid Ali Ahmad
 # Author email: rash.dev@hotmail.com
 #
-# Base URL to search for Country/City
-# http://www.islamicfinder.org/prayer_search.php#2
-
-res=$(curl --silent "http://www.islamicfinder.org/prayer_service.php?country=usa&amp;amp;city=san_jose&amp;state=CA&amp;zipcode=95134&amp;latitude=37.4307&amp;longitude=-121.9449&amp;timezone=-8&amp;HanfiShafi=1&amp;pmethod=5&amp;fajrTwilight1=10&amp;fajrTwilight2=10&amp;ishaTwilight=10&amp;ishaInterval=30&amp;dhuhrInterval=1&amp;maghribInterval=1&amp;dayLight=1&amp;simpleFormat=xml")
-line=$(echo $res | sed ':a;N;$!ba;s/\n//g') 
-echo $line | sed -n -e 's/.*&lt;hijri&gt;\(.*\)&lt;\/hijri&gt;.*/\1/p'</string>
+#!/bin/bash
+cat $TMPDIR/GeekTool_Hijri.txt
+</string>
 	<key>DropShadow</key>
 	<false/>
 	<key>FailureImage</key>

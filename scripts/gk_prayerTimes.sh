@@ -10,12 +10,30 @@
 ###                        CONFIGURATION SECTION BEGIN                      ###
 ###############################################################################
 
-# The URL of the search query from islamic finder
-paderborn="http://www.islamicfinder.org/prayer_service.php?country=germany&city=paderborn&state=07&zipcode=&latitude=51.7167&longitude=8.7667&timezone=1&HanfiShafi=2&pmethod=1&fajrTwilight1=10&fajrTwilight2=10&ishaTwilight=10&ishaInterval=30&dhuhrInterval=1&maghribInterval=1&dayLight=1&simpleFormat=xml"
-hounslow="http://www.islamicfinder.org/prayer_service.php?country=united_kingdom&city=Hounslow&state=07&zipcode=&latitude=51.4667&longitude=-0.3500&timezone=0&HanfiShafi=2&pmethod=1&fajrTwilight1=10&fajrTwilight2=10&ishaTwilight=10&ishaInterval=30&dhuhrInterval=1&maghribInterval=1&dayLight=1&simpleFormat=xml"
+GKTL_FILE_HIJRIDATE=$TMPDIR/GeekTool_Hijri.txt
 
-sanjose="http://www.islamicfinder.org/prayer_service.php?latitude=37.3422&longitude=-121.9052&timezone=-8&pmethod=5&daylight=1&city=San_Jose&state=CA&state_name=California&country_code_geoip=US&country=usa&geoip=1&lang=english&simpleFormat=xml"
-webURL=$sanjose
+BASEURL="http://www.islamicfinder.org/prayer_service.php?lang=english&simpleFormat=xml"
+
+CITY="San_Jose"
+COUNTRY="US"
+STATE="CA"
+STATE_NAME="California"
+COUNTRY_CODE_GEOIP="US"
+LATITUDE="37.3422"
+LONGITUDE="-121.9052"
+TIMEZONE="-8"
+DAYLIGHT="1"
+PMETHOD="5"
+HANFISHAFI="1"
+
+#sanjose="http://www.islamicfinder.org/prayer_service.php?latitude=37.3422&longitude=-121.9052&timezone=-8&pmethod=5&daylight=1&city=San_Jose&state=CA&state_name=California&country_code_geoip=US&country=usa&lang=english&simpleFormat=xml"
+#url=$sanjose
+
+# The URL of the search query from islamic finder
+webURL=$BASEURL"&hanfishafi="$HANFISHAFI"&country="$COUNTRY"&state="$STATE"&state_name"$STATE_NAME"&latitude="$LATITUDE"&longitude="$LONGITUDE"&timezone="$TIMEZONE"&daylight="$DAYLIGHT"&pmethod="$PMETHOD
+
+# The URL of the search query from islamic finder
+#webURL=$sanjose
 
 # Select the color in which you want the current Salah to be highlighted
 # Black, Red, Green, Yellow, Blue, Magenta, Cyan, White
@@ -438,6 +456,9 @@ fi
 
 # Remove all new line characters
 xmlResult=$(echo $xmlResult | sed ':a;N;$!ba;s/\n//g')
+
+# Hijri date is all between <hijri> and </hijri>
+echo $xmlResult | sed -n -e 's/.*<hijri>\(.*\)<\/hijri>.*/\1/p' > $GKTL_FILE_HIJRIDATE
 
 # Remove spaces from result and put back in line
 xmlResult=$(echo $xmlResult | sed 's/ //g')
